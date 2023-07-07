@@ -46,7 +46,7 @@ public class InstanceLP extends Instance implements Loggable {
 	/**
 	 * Maximizes the "fair share", meaning each EV receives a priority based on how close it is to its min SoC
 	 */
-	public final Objective objectiveFairShare = new Objective(1e12);
+	public final Objective objectiveFairShare = new Objective(0);
 	
 	/**
 	 * Minimizes peaks, creates a smooth aggregated energy curve. Conflicts with energy price minimization
@@ -56,7 +56,7 @@ public class InstanceLP extends Instance implements Loggable {
 	/**
 	 * Minimizes energy costs. Conflicts with peak shaving
 	 */
-	public final Objective objectiveEnergyCosts = new Objective(1); 
+	public final Objective objectiveEnergyCosts = new Objective(1e12); 
 	
 	/**
 	 * Minimizes load imbalance of the three phases
